@@ -1,0 +1,118 @@
+package com.prodapt.Assignment3;
+
+public class Library11 {
+	int id;
+	String book;
+	String author;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getBook() {
+		return book;
+	}
+	public void setBook(String book) {
+		this.book = book;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	@Override
+	public String toString() {
+		return "Library11 [id=" + id + ", book=" + book + ", author=" + author + "]";
+	}
+	public Library11(int id, String book, String author) {
+		super();
+		this.id = id;
+		this.book = book;
+		this.author = author;
+	}
+
+
+}
+
+package com.prodapt.Assignment3;
+import java.util.ArrayList;
+public class Businesslogic {
+public ArrayList<Library11> addbucket(){
+
+
+		Library11 l = new Library11(1, "HarryPotter", "JK Rowling"); 
+		Library11 l1 = new Library11(2, "Java", "James"); 
+		Library11 l2 = new Library11(3, "Cpp", "Muthu"); 
+		Library11 l3 = new Library11(4, "Python", "Joan"); 
+		Library11 l4 = new Library11(5, "MySQL", "Punitha"); 
+
+		ArrayList<Library11> libRecords = new ArrayList<Library11>();
+
+		libRecords.add(l);
+		libRecords.add(l1);
+		libRecords.add(l2);
+		libRecords.add(l3);
+		libRecords.add(l4);
+
+		return libRecords;
+	}
+
+	void addbooks() {
+
+		System.out.println("The books details are being added");
+
+	}
+
+	void displaybooks(ArrayList<Library11> libRecords) {
+
+		System.out.println("Currently the books available are " );
+	for(Library11 lb : libRecords) {
+
+		System.out.println(lb);
+	}
+	}
+
+	void updatebooks(ArrayList<Library11> libRecords) {
+
+		Library11 updateLibrary = new Library11(4,"HTML","Goushika");
+		libRecords.add(updateLibrary);
+		System.out.println("The updated Record is "+libRecords);
+	}
+
+	void deletebooks(ArrayList<Library11> libRecords) {
+
+		libRecords.remove(3);
+		System.out.println("One Data has been removed");
+		System.out.println("The New Record is shown here"+libRecords);
+	}
+
+}
+
+
+package com.prodapt.Assignment3;
+import java.util.ArrayList;
+public class Tester {
+
+	public static void main(String[] args) {
+
+
+
+		// TODO Auto-generated method stub
+
+		Businesslogic bl =new Businesslogic();
+		ArrayList<Library11> libRecords = bl.addbucket();
+		bl.addbooks();
+		bl.displaybooks(libRecords);
+		bl.updatebooks(libRecords);
+		bl.deletebooks(libRecords);
+
+	}
+
+
+
+		// TODO Auto-generated method stub
+
+	}
+
